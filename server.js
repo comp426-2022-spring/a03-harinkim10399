@@ -33,6 +33,11 @@ app.get('/app/flips/:number', (req, res) => {
     });
 });
 
+app.get('/app/flips/:call', (req, res) => {
+    res.status(200).json(
+        flipACoin(req.params.call)
+    )
+});
 
 
 // Default response for any other request

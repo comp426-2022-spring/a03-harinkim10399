@@ -33,7 +33,7 @@ app.get('/app/flips/:number', (req, res) => {
     });
 });
 
-app.get('/app/flip/:call', (req, res) => {
+app.get('/app/flip/call/:call', (req, res) => {
     res.status(200).json(flipACoin(req.params.call))
 });
 

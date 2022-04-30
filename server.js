@@ -33,10 +33,8 @@ app.get('/app/flips/:number', (req, res) => {
     });
 });
 
-app.get('/app/flips/:call', (req, res) => {
-    res.status(200).json(
-        flipACoin(req.params.call)
-    )
+app.get('/app/flip/:call', (req, res) => {
+    res.status(200).json(flipACoin(req.params.call))
 });
 
 
@@ -77,8 +75,7 @@ function countFlips(array) {
 }
 
 function flipACoin(call) {
-    const result = {call: call, flip: "", result: ""};
-    result.flip = coinFlip();
+    const result = {call: call, flip: coinFlip(), result: ""};
     if (result.call == result.flip) {
       result.result = "win";
     } else {
